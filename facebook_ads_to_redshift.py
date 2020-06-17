@@ -45,7 +45,7 @@ In addition these standard fields, custom fields can also be specified.
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
-from airflow.operators import FacebookAdsInsightsToS3Operator, S3ToRedshiftOperator
+from airflow.operators.facebook_ads_to_s3_operator import FacebookAdsInsightsToS3Operator, S3ToRedshiftOperator
 
 time_string = '{{ ts_nodash }}'
 FACEBOOK_CONN_ID = ''
