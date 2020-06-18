@@ -10,7 +10,7 @@ default_args = {
 
 dag = DAG(dag_id='redshift_S3',
   default_args=default_args,
-  schedule_interval="'0 12 * * *'",
+  schedule_interval='0 12 * * *',
   catchup=False
 )
 
