@@ -24,5 +24,11 @@ task_1 = BashOperator(
     dag=dag,
 )
 
-task_1 >> task_1
-task_1 >> task_1
+task_2 = BashOperator(
+    task_id='task_2',
+    bash_command='sleep 30;echo HI>/home/airflow/logs/count_hi.txt',
+    dag=dag,
+)
+
+task_1 >> task_2
+task_1 >> task_2
