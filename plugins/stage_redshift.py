@@ -4,7 +4,6 @@ from airflow.utils.decorators import apply_defaults
 from airflow.contrib.hooks.aws_hook import AwsHook
 
 
-
 class StageToRedshiftOperator(BaseOperator):
     ui_color = '#358140'
     copy_sql = """
@@ -23,11 +22,10 @@ class StageToRedshiftOperator(BaseOperator):
                  table="",
                  s3_bucket="",
                  s3_key="",
-                 region = "",
-                 create_table = "",
+                 region="",
+                 create_table="",
                  format="",
                  *args, **kwargs):
-
         super(StageToRedshiftOperator, self).__init__(*args, **kwargs)
 
         self.table = table
@@ -41,7 +39,6 @@ class StageToRedshiftOperator(BaseOperator):
         self.region = region
         self.create_table = create_table
         self.aws_credentials_id = aws_credentials_id
-
 
     def execute(self, context):
         aws_hook = AwsHook(self.aws_credentials_id)
@@ -68,7 +65,3 @@ class StageToRedshiftOperator(BaseOperator):
             self.format
         )
         redshift.run(formatted_sql)
-
-
-
-

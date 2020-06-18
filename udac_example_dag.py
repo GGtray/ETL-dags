@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
-from airflow.operators import StageToRedshiftOperator
+from plugins.stage_redshift import StageToRedshiftOperator
 from create_tables import *
 
 default_args = {
