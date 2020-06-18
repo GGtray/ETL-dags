@@ -24,4 +24,5 @@ task_1 = BashOperator(
     dag=dag,
 )
 
-task_1
+task_1 >> task_1
+task_1 >> task_1
