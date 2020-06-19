@@ -9,7 +9,7 @@ from airflow.operators.dummy_operator import DummyOperator
 
 dag = DAG(
     dag_id='autoscaling-test-0',
-    owner='lizi zhang',
+    # owner='lizi zhang',
     schedule_interval='0 12 * * *',
     start_date=datetime(2017, 3, 20),
     dagrun_timeout=timedelta(minutes=5),
